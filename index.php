@@ -1,11 +1,28 @@
-<pre>
 <?php
 
-$frase = "bom trabalho";
-$palavra = "mal";
+class Animal {
 
-$novoNome = substr($frase, 0, strpos($frase, "t")) . "$palavra";
+    public function Andar (){
 
-echo $novoNome;
+        return "Anda";
+    }
+
+    public function Comunicar (){
+
+        return "Fala";
+    }
+}
+
+class Cachorro extends Animal {
+
+    public function Comunicar (){
+
+        return "Late e " . parent::Comunicar ();
+    }
+}
+
+$Shiba = new Cachorro;
+echo $Shiba->Andar();
+echo "<br>";
+echo $Shiba->Comunicar();
 ?>
-</pre>
